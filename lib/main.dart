@@ -72,9 +72,25 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
               // email & paswd textfield
-              const LoginForm(),
-              // forgot password
-              const Text('Forgot Password?'),
+              const Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Column(
+                  children: [
+                    LoginForm(),
+                    // Row(
+                    //   children: [
+                    //     Expanded(
+                    //       child: Text(
+                    //         'Forgot Password?',
+                    //         textAlign: TextAlign.right,
+                    //       ),
+                    //     ),
+                    //   ],
+                    // ),
+                  ],
+                ),
+              ),
+
               // don't have an account? Signup
               const Text('Dont have an account?Signup'),
             ],
@@ -95,6 +111,55 @@ class LoginForm extends StatefulWidget {
 class _LoginFormState extends State<LoginForm> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Padding(
+      padding: const EdgeInsets.all(12),
+      child: Column(
+        children: [
+          Container(
+            margin: const EdgeInsets.symmetric(vertical: 16),
+            child: const TextField(
+              decoration: InputDecoration(
+                hintText: 'Enter your Email',
+                prefixIcon: Icon(Icons.email),
+                prefixIconColor: Colors.grey,
+                enabledBorder: InputBorder.none,
+                focusedBorder: InputBorder.none,
+                errorBorder: InputBorder.none,
+                disabledBorder: InputBorder.none,
+                filled: true,
+                fillColor: Colors.white,
+                contentPadding:
+                    EdgeInsets.symmetric(vertical: 16.0, horizontal: 12.0),
+              ),
+            ),
+          ),
+          const TextField(
+            decoration: InputDecoration(
+              hintText: 'Password',
+              prefixIcon: Icon(Icons.vpn_key),
+              prefixIconColor: Colors.grey,
+              enabledBorder: InputBorder.none,
+              focusedBorder: InputBorder.none,
+              errorBorder: InputBorder.none,
+              disabledBorder: InputBorder.none,
+              filled: true,
+              fillColor: Colors.white,
+              contentPadding:
+                  EdgeInsets.symmetric(vertical: 16.0, horizontal: 12.0),
+            ),
+          ),
+          const Row(
+            children: [
+              Expanded(
+                child: Text(
+                  'Forgot Password?',
+                  textAlign: TextAlign.right,
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
   }
 }
