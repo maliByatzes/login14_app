@@ -29,37 +29,72 @@ class LoginPage extends StatelessWidget {
             children: [
               // logo
               Container(
-                color: Colors.orange,
-                child: Column(
-                  children: [
-                    const SizedBox(
-                      height: 50,
-                      width: double.infinity,
-                    ),
-                    Image.asset(
-                      'lib/images/logo.png',
-                      height: 120,
-                    ),
-                    const SizedBox(
-                      height: 50,
-                    ),
-                    const Text('Login'),
-                  ],
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      Color.fromARGB(255, 255, 115, 0),
+                      Color.fromARGB(255, 245, 159, 0)
+                    ],
+                  ),
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(85),
+                  ),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Column(
+                    children: [
+                      const SizedBox(
+                        height: 30,
+                        width: double.infinity,
+                      ),
+                      Image.asset(
+                        'lib/images/logo.png',
+                        height: 100,
+                      ),
+                      const SizedBox(
+                        height: 30,
+                      ),
+                      const Align(
+                        alignment: Alignment.bottomRight,
+                        child: Text(
+                          'Login',
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
-              // login text
-
-              // email textfield
-
-              // passwaord textfield
-
+              // email & paswd textfield
+              const LoginForm(),
               // forgot password
-
+              const Text('Forgot Password?'),
               // don't have an account? Signup
+              const Text('Dont have an account?Signup'),
             ],
           ),
         ),
       ),
     );
+  }
+}
+
+class LoginForm extends StatefulWidget {
+  const LoginForm({super.key});
+
+  @override
+  State<LoginForm> createState() => _LoginFormState();
+}
+
+class _LoginFormState extends State<LoginForm> {
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
   }
 }
