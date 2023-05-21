@@ -77,22 +77,16 @@ class LoginPage extends StatelessWidget {
                 child: Column(
                   children: [
                     LoginForm(),
-                    // Row(
-                    //   children: [
-                    //     Expanded(
-                    //       child: Text(
-                    //         'Forgot Password?',
-                    //         textAlign: TextAlign.right,
-                    //       ),
-                    //     ),
-                    //   ],
-                    // ),
                   ],
                 ),
               ),
 
               // don't have an account? Signup
-              const Text('Dont have an account?Signup'),
+              Container(
+                  margin: const EdgeInsets.only(
+                    top: 280.0,
+                  ),
+                  child: const Text('Don\'t have an account ? Signup')),
             ],
           ),
         ),
@@ -133,19 +127,24 @@ class _LoginFormState extends State<LoginForm> {
               ),
             ),
           ),
-          const TextField(
-            decoration: InputDecoration(
-              hintText: 'Password',
-              prefixIcon: Icon(Icons.vpn_key),
-              prefixIconColor: Colors.grey,
-              enabledBorder: InputBorder.none,
-              focusedBorder: InputBorder.none,
-              errorBorder: InputBorder.none,
-              disabledBorder: InputBorder.none,
-              filled: true,
-              fillColor: Colors.white,
-              contentPadding:
-                  EdgeInsets.symmetric(vertical: 16.0, horizontal: 12.0),
+          Container(
+            margin: const EdgeInsets.only(
+              bottom: 10.0,
+            ),
+            child: const TextField(
+              decoration: InputDecoration(
+                hintText: 'Password',
+                prefixIcon: Icon(Icons.vpn_key),
+                prefixIconColor: Colors.grey,
+                enabledBorder: InputBorder.none,
+                focusedBorder: InputBorder.none,
+                errorBorder: InputBorder.none,
+                disabledBorder: InputBorder.none,
+                filled: true,
+                fillColor: Colors.white,
+                contentPadding:
+                    EdgeInsets.symmetric(vertical: 16.0, horizontal: 12.0),
+              ),
             ),
           ),
           const Row(
